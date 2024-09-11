@@ -13,21 +13,8 @@ driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
 # open the url
-driver.get('https://www.amazon.com/')
+driver.get('https://www.target.com/')
+sleep(10)
 
-# populate search field
-search = driver.find_element(By.NAME, 'q')
-search.clear()
-search.send_keys('maximus')
-
-# wait for 4 sec
-sleep(4)
-
-# click search button
-driver.find_element(By.NAME, 'btnK').click()
-
-# verify search results
-assert 'maximus'.lower() in driver.current_url.lower(), f"Expected query not in {driver.current_url.lower()}"
-print('Test Passed')
-
-driver.quit()
+driver.find_element(By.XPATH, '//a[@aria-label="Account, sign in"]').click()
+sleep(10)
