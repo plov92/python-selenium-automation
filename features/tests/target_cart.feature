@@ -1,8 +1,10 @@
 # Created by SOL Green at 9/11/2024
-Feature: Verify "Cart is empty" message
+Feature: Add product into Cart
 
 
-  Scenario: Verify "Cart is empty" message in target.com
+  Scenario: Verify product is added into Cart
     Given Open Target main page
-    When Click on Cart icon
-    Then Verify "Your cart is empty" message
+    When Search for tea
+    Then Verify that correct search results shown for tea
+    Then Add one product into Cart
+    Then Check Cart has item

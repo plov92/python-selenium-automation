@@ -26,7 +26,7 @@ driver.find_element(By.XPATH, '//a[text()="Conditions of Use"]')
 driver.find_element(By.XPATH, '//a[text()="Privacy Notice"]')
 driver.find_element(By.CSS_SELECTOR, ".a-link-emphasis")
 
-s leep(10)
+sleep(10)
 
 print('Test case passed')
 driver.quit()
