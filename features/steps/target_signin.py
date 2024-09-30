@@ -10,7 +10,7 @@ def open_target_page(context):
     sleep(5)
 
 
-@when('Click on Sign in')
+@given('Click on Sign in')
 def click_signin(context):
     context.app.header.click_signin()
     sleep(5)

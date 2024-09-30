@@ -15,3 +15,4 @@ Feature: Target sign in
     And Input password ****
     And Click on Sign in with password
     And Verify user is logged in
+

@@ -12,6 +12,7 @@ class SigninPage(Page):
     SIGNIN_WITH_PWD = (By.XPATH, "//span[contains(text(), 'Sign in with password')]")
     PROFILE_BTN = (By.CSS_SELECTOR, '[data-test="@web/AccountLink"]')
     PASSKEYS = (By.XPATH, "//button[contains(text(), 'Create a passkey')]")
+    TERMS_CONDITIONS = (By.CSS_SELECTOR, '[aria-label="terms & conditions - opens in a new window"]')
 
     def verify_signin_form(self):
         actual_text = self.driver.find_element(*self.SIGNIN_TEXT).text
@@ -35,3 +36,6 @@ class SigninPage(Page):
         new_url = self.driver.current_url
         assert new_url != self.initial_url, f"Expected URL to change from '{self.initial_url}', but it did not"
 
+
+    def click_terms_conditions(self):
+        self.find_element(*self.TERMS_CONDITIONS).click()
