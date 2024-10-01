@@ -13,7 +13,7 @@ class SigninPage(Page):
     PROFILE_BTN = (By.CSS_SELECTOR, '[data-test="@web/AccountLink"]')
     PASSKEYS = (By.XPATH, "//button[contains(text(), 'Create a passkey')]")
     TERMS_CONDITIONS = (By.CSS_SELECTOR, '[aria-label="terms & conditions - opens in a new window"]')
-
+    CANT_FIND_ACCOUNT = (By.XPATH, '//div[text()="We can\'t find your account."]')
     def verify_signin_form(self):
         actual_text = self.driver.find_element(*self.SIGNIN_TEXT).text
         expected_text = "Sign into your Target account"
@@ -39,3 +39,8 @@ class SigninPage(Page):
 
     def click_terms_conditions(self):
         self.find_element(*self.TERMS_CONDITIONS).click()
+
+
+    def verify_cant_find_account(self):
+        self.wait_for_element_to_appear(*self.CANT_FIND_ACCOUNT)
+        sleep(3)

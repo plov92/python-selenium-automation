@@ -6,6 +6,8 @@ from pages.base_page import Page
 from pages.signin_page import SigninPage
 from pages.signin_popup import SigninPopup
 from pages.target_app_page import TargetAppPage
+from pages.target_help_page import TargetHelpPage
+
 
 class Application:
     def __init__(self, driver):
@@ -17,5 +19,6 @@ class Application:
         self.signin_popup = SigninPopup(driver)
         self.signin_page = SigninPage(driver)
         self.target_app_page = TargetAppPage(driver)
+        self.target_help_page = TargetHelpPage(driver)
 
 

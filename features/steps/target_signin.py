@@ -10,7 +10,7 @@ def open_target_page(context):
     sleep(5)
 
 
-@given('Click on Sign in')
+@when('Click on Sign in')
 def click_signin(context):
     context.app.header.click_signin()
     sleep(5)
@@ -41,4 +41,12 @@ def click_signin_with_password(context):
 @then('Verify user is logged in')
 def verify_user_logged_in(context):
     context.app.signin_page.verify_user_logged_in()
+
+
+@then('Verify "We can\'t find your account" message shown')
+def verify_cant_find_account(context):
+    context.app.signin_page.verify_cant_find_account()
+
+
+
 
