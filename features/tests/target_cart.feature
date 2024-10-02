@@ -9,6 +9,7 @@ Feature: Target Cart
     Then Add one product into Cart
     Then Check Cart has item
 
+    @smoke
   Scenario: “Your cart is empty” message is shown for empty cart
     Given Open Target main page
     When Click on Cart icon
